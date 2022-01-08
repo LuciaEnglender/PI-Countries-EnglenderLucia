@@ -1,0 +1,27 @@
+.busqueda{
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 3px;
+    font: inherit;
+    cursor:default;
+    outline: inherit;
+    /* transition: all .5s ease-out; */
+    background-color: rgba(0, 0, 0, 0.068);
+}
+
+.buscar{
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 3px;
+    font: inherit;
+    cursor:default;
+    outline: inherit;
+    transition: all .5s ease-out;
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+.buscar:hover{
+    background-color: rgba(255, 255, 255, 0.267);
+}

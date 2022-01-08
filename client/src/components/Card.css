@@ -1,0 +1,36 @@
+.principal{
+    display: flex;
+  flex-direction:column;
+  position:relative;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 15px 10px grey;
+    margin: 10px;
+    background: none;
+    border-radius: 5%;
+   background-color: rgba(0, 0, 0, 0.534);
+   justify-content: space-around;
+}
+
+.title{
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+img{
+  height: 60px;
+  width: 95px;
+  display: flex;
+  align-self: center;
+}
+
+h5{
+  color: #fff;
+  display: flex;
+  align-self: center;
+}
+

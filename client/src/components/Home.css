@@ -1,0 +1,76 @@
+.containerAll{
+    display: flex;
+    flex-wrap: wrap;
+    position:relative;
+    align-items: baseline;
+    justify-content: space-around;
+    margin-top: 30px;
+    
+}
+
+.containerA{
+    background-image: linear-gradient(to top, hsla(241, 75%, 76%, 0.493) 0%, hsla(346, 86%, 88%, 0.555) 100%), url("https://img.freepik.com/vector-gratis/mapa-mundo-silueta-gris-aislado-blanco_67515-617.jpg?size=626&ext=jpg");
+    background-size: contain;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.title h1{
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.crear-acti{
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 3px;
+    font: inherit;
+    cursor:default;
+    outline: inherit;
+    transition: all .5s ease-out;
+    background-color: rgba(0, 0, 0, 0.534);
+}
+
+.crear-acti:hover{
+    background-color: rgba(255, 255, 255, 0.267);
+}
+
+.countriesAgain{
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 3px;
+    font: inherit;
+    cursor:default;
+    outline: inherit;
+    transition: all .5s ease-out;
+    background-color: rgba(0, 0, 0, 0.534);
+}
+
+.countriesAgain:hover{
+    background-color: rgba(255, 255, 255, 0.349);
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.534);
+    color: #fff;
+}
+
+.another{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+select{
+    padding: 5px;
+    margin-bottom: 2px;
+}
+

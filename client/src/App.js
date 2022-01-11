@@ -8,6 +8,7 @@ import LandingPage from './components/LandingPage';
 import Home from './components/Home';
 import Detail from './components/Detail';
 import CreateActivity from './components/CreateActivity'
+import ERROR from './components/ERROR';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path ='/home' render={() => <Home/>}/>
         <Route  path='/details/:idPais' render = {() => <Detail />}/>
         <Route exact path='/createActivity' render = {() => <CreateActivity/>} />
+        <Route path='*' render={() => <ERROR/>}/>
       </Switch>
     </BrowserRouter>
   );

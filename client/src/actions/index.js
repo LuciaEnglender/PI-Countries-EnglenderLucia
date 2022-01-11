@@ -11,7 +11,8 @@ export const FILTER_BY_NAME = 'FILTER_BY_NAME';
 export const GET_DETAIL = 'GET_DETAIL';
 export const CREATE_ACTIVITY = 'CREATE_ACTIVITY';
 export const GET_ACTIVITIES ='GET_ACTIVITIES';
-export const FILTER_BY_ACTIVITIES ='FILTER_BY_ACTIVITIES'
+export const FILTER_BY_ACTIVITIES ='FILTER_BY_ACTIVITIES';
+export const ERROR = 'ERROR';
 
 export function getCountries(){
     return async function (dispatch){
@@ -49,12 +50,14 @@ export function filterByName(payload){
     return async function (dispatch){
         try {
             const json = await axios.get(`http://localhost:3001/countries?name=${payload}`)
+
             return dispatch({
                 type : 'FILTER_BY_NAME',
                 payload : json.data
             })
         } catch (error) {
-            return error
+          
+           return error
         }
     }
 }
@@ -63,10 +66,13 @@ export function getDetail(id){
     return async function (dispatch){
         try{
             const json = await axios.get(`http://localhost:3001/countries/${id}`)
+        
             return dispatch({
                 type: 'GET_DETAIL',
                 payload: json.data
             })
+
+           
         }catch(e){
             console.log(e)
         }

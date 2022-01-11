@@ -6,13 +6,15 @@ import { GET_COUNTRIES ,
         GET_DETAIL,
         CREATE_ACTIVITY,
         GET_ACTIVITIES,
-        FILTER_BY_ACTIVITIES} from '../actions/index'
+        FILTER_BY_ACTIVITIES,
+        } from '../actions/index'
 
 const initialState = {
     countries : [],
     countriesAux : [],
     detail : [],
-    activities: []
+    activities: [],
+ 
 }
 export default function rootReducer(state = initialState, action){
 switch(action.type){

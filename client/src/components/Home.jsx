@@ -55,9 +55,14 @@ export default function Home(){
     let currentCountries = allCountries && allCountries.slice(firstCountry, lastCountry)
 
     const paginado = (pageNumber) => {
-     
-            setCurrentPage(pageNumber)
-          
+        setCurrentPage(pageNumber)
+        // if(pageNumber === 1 ){
+        //     setCurrentPage(pageNumber);
+        //     setCountriesPerPAge(9)
+        // }else{
+        //  setCurrentPage(pageNumber)
+        //  setCountriesPerPAge(10)
+        // }
     }
 
 
@@ -69,6 +74,7 @@ export default function Home(){
         </div>
                 
         {
+        
             
             <div className="main">
             
@@ -117,12 +123,13 @@ export default function Home(){
 
                 <div className="another">
                 <NavLink to='/createActivity'><button className="crear-acti">Crear Actividad Turistica</button></NavLink>
-                    <button className="countriesAgain" onClick={e => {handleClick(e)}}>
-                        Volver a cargar todos los paises
-                    </button>
                     <div className="searchBar">
-                     <SearchBar />
+                       <SearchBar />
                      </div>
+                <button className="countriesAgain" onClick={e => {handleClick(e)}}>
+                    Volver a cargar todos los paises
+                </button>
+                
                 </div>
         <div className="containerAll">
                 {
@@ -140,6 +147,8 @@ export default function Home(){
                     paginado={paginado}/>
                 }</div>  
         </div>
+
+    
         }
         
 

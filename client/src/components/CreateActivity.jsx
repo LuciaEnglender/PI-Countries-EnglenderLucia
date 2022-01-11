@@ -5,6 +5,24 @@ import { NavLink } from "react-router-dom";
 import { createActivity , getCountries } from "../actions";
 import './CreateActivity.css'
 
+
+function validate(input){
+    let errors = {};
+
+    if(!input.description){
+        errors.description = 'Se requiere una breve descripcion'
+    } else if(input.dicifulty > 5 ||input.dificulty < 1 ){
+        errors.dicifulty = 'Debe ser un número entre 1 y 5';
+    } else if(!input.duration){
+        errors.duration = 'Se requiere especificar duración';
+    } else if(!input.season){
+        errors.season = 'Se requiere especificar temporada'
+    } else if(!input.nameCountry){
+        errors.nameCountry = 'Debe elegir un país'
+    }
+    return errors
+}
+
 export default  function CreateActivity () {
     const dispatch = useDispatch();
     const [input, setInput] = useState({
@@ -22,12 +40,26 @@ export default  function CreateActivity () {
         dispatch(getCountries())
     }, [dispatch])
 
+    const [errors, setErrors] = useState({
+        description :  'Se requiere una breve descripcion',
+        dificulty : 'Debe ser un número entre 1 y 5',
+        duration : 'Se requiere especificar duración',
+        season: 'Se requiere especificar temporada',
+        nameCountry :  'Debe elegir un país'
+    });
+    
+
+
     function handeChange(e){
         e.preventDefault(e);
         setInput({
             ...input,
             [e.target.name] : e.target.value
-        })
+        });
+        setErrors(validate({
+            ...input,
+            [e.target.name] : e.target.value
+        }))
     }
 
     function handleCheckBox(e){
@@ -37,6 +69,12 @@ export default  function CreateActivity () {
             ...input,
             season : e.target.value
                 })}
+    else{
+        setErrors(validate({
+            ...input,
+            [e.target.name] : e.target.value
+            }))
+        }
     }
 
     function handleSelect(e){
@@ -44,12 +82,16 @@ export default  function CreateActivity () {
         setInput({
             ...input,
             nameCountry: [...input.nameCountry, e.target.value]
-        })
+        });
+        setErrors(validate({
+            ...input,
+            [e.target.name] : e.target.value
+        }))
     }
 
     function handleSubmit (e) {
         e.preventDefault();
-        
+        if(Object.keys(errors).length === 0){
         dispatch(createActivity(input));
         setInput({
             description: '',
@@ -58,7 +100,18 @@ export default  function CreateActivity () {
             season: '',
             nameCountry: []
         })  
+        setErrors({
+            description :  'Se requiere una breve descripcion',
+        dificulty : 'Debe ser un número entre 1 y 5',
+        duration : 'Se requiere especificar duración',
+        season: 'Se requiere especificar temporada',
+        nameCountry :  'Debe elegir un país'
+        })
         alert('creado con exito');
+    } else {
+        alert('completar los campos faltantes')
+        }
+        console.log(errors)
     }
 
     function handledelete(e){
@@ -70,6 +123,8 @@ export default  function CreateActivity () {
         console.log(aux)
         e.preventDefault()
     }
+
+
     
     return (
         <div className="container">
@@ -78,26 +133,41 @@ export default  function CreateActivity () {
             </div>
             <form onSubmit={(e) => handleSubmit(e)} className="inputs">
                 <div className="descrip">
-                    <label>Descripcion</label>
+                    <label>Descripcion: </label>
                     <input type={'text'} name='description' onChange={(e) => handeChange(e)} key= 'descripcion' value={input.description}/>
+                    {
+                        errors.description && <p className="error">{errors.description}</p>
+                    }
                 </div>
                 <div className="dificulty">
-                    <label>Dificultad</label>
+                    <label>Dificultad: </label>
                     <input type={'number'} min={1} max={5} name='dificulty' onChange={(e) => handeChange(e)} key='dificultad' value={input.dificulty} />
+                    {
+                        errors.dificulty && <p className="error">{errors.dificulty}</p>
+                    }
                 </div>
                 <div className="duration">
-                    <label>Duracion</label>
-                    <input type={'number'} name='duration' onChange={(e) => handeChange(e)} key='duration' value={input.duration}/>
+                    <label className="durationLabel">Duracion: </label>
+                    <input type={'number'} name='duration' onChange={(e) => handeChange(e)} key='duration' value={input.duration}/> hs.
+                    {
+                        errors.duration && <p className="error">{errors.duration}</p>
+                    }
                 </div>
                 <div className="season">
-                    <label>Temporada</label>
-                    <label><input type='checkbox' name='SPRING' value='SPRING' onClick={(e) => handleCheckBox(e)}   key = 'key.spring'/>Spring</label>
-                    <label><input type='checkbox' name='SUMMER' value='SUMMER' onClick={(e) => handleCheckBox(e)} key ='key.summer'/>Summer</label>
-                    <label><input type='checkbox' name='AUTUMN' value='AUTUMN' onClick={(e) => handleCheckBox(e)}  key = 'key.autumn'/>Autumn</label>
-                    <label><input type='checkbox' name='WINTER' value='WINTER' onClick={(e) => handleCheckBox(e)}   key = 'key.winter'/>Winter</label>
-                </div>
+
+                    <label className="seasonLabel">Temporada: </label>
+                    <div className="seasonInputs">
+                      <label><input className="checkbox"   type="checkbox" name='SPRING' value='SPRING' onClick={(e) => handleCheckBox(e)}   key = 'key.spring'/>Spring</label>
+                        <label><input  className="checkbox"   type="checkbox" name='SUMMER' value='SUMMER' onClick={(e) => handleCheckBox(e)} key ='key.summer'/>Summer</label>
+                        <label><input className="checkbox"  type="checkbox" name='AUTUMN' value='AUTUMN' onClick={(e) => handleCheckBox(e)}  key = 'key.autumn'/>Autumn</label>
+                        <label><input className="checkbox" type="checkbox" name='WINTER' value='WINTER' onClick={(e) => handleCheckBox(e)}   key = 'key.winter'/>Winter</label>
+                    </div>
+                    {
+                        errors.season && <p className="error">{errors.season}</p>
+                    }
+              </div>
                 <div className="countries">
-                    <label>Paises</label>
+                    <label>Paises: </label>
                     <select onChange={(e) => handleSelect(e)} name='nameCountry' key='contries' > 
                         {
                             countries.map( p =>( 
@@ -105,6 +175,9 @@ export default  function CreateActivity () {
                             ))
                         }
                     </select>
+                    {
+                        errors.nameCountry && <p className="error">{errors.nameCountry}</p>
+                    }
                     <div className="countriesDelete">
                         {
 
@@ -118,9 +191,9 @@ export default  function CreateActivity () {
                         }
                     </div>
                 </div>
-                <button type='submit' key='button.crear'>Crear</button>
+                <button type='submit' key='buttoncrear' className="buttoncrear">Crear</button>
             </form>
-            <NavLink to='/home'><button>Volver</button></NavLink>
+            <NavLink to='/home'><button className="butonVolver">Volver</button></NavLink>
         </div>
     )
 } 

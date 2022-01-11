@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+
     
 }
 
@@ -45,4 +46,97 @@
     flex-direction: row;
     margin-right:10px ;
     border: 1px solid #fff;
+}
+
+.inputs{
+    padding-left: 40%;
+    padding-top: 20px;
+    color: #fff;
+}
+
+.descrip label{
+    background-color:  rgba(0, 0, 0, 0.164);
+}
+.descrip{
+    padding-bottom: 30px;
+}
+
+.dificulty label{
+    background-color:  rgba(0, 0, 0, 0.164);
+    padding: 3px;
+}
+.dificulty{
+    padding-bottom: 30px;
+
+}
+ .seasonLabel{
+    background-color:  rgba(0, 0, 0, 0.164);
+    padding: 3px;
+ }
+ .durationLabel{
+    background-color:  rgba(0, 0, 0, 0.164);
+    padding: 3px;
+ }
+
+.season{
+
+    padding-bottom: 30px;
+}
+.countries label{
+    background-color:  rgba(0, 0, 0, 0.164);
+    padding: 3px;
+}
+.countries{
+    padding-bottom: 30px;
+
+}
+
+.buttoncrear{
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 3px;
+    font: inherit;
+    cursor:default;
+    outline: inherit;
+    transition: all .5s ease-out;
+    background-color: rgba(0, 0, 0, 0.534);
+}
+
+.buttoncrear:hover{
+    background-color: rgba(255, 255, 255, 0.267);
+}
+
+.butonVolver{
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 3px;
+    font: inherit;
+    cursor:default;
+    outline: inherit;
+    transition: all .5s ease-out;
+    background-color: rgba(0, 0, 0, 0.534);
+    margin-left: 15%;
+}
+
+.butonVolver:hover{
+    background-color: rgba(255, 255, 255, 0.267);
+
+}
+
+.checkbox{
+   
+    height: 25px;
+    width: 25px;
+
+}
+
+.seasonInputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.error{
+    color: red;
 }

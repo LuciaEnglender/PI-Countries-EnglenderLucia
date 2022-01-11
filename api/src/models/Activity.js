@@ -9,23 +9,32 @@ module.exports = (sequelize) => {
             primaryKey: true
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         dificulty: {
             type: DataTypes.INTEGER,
             validate:{
                 min: 1,
                 max: 5
-            }
+            },
+            allowNull: false
+
         },
         duration:{
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
+
         },
         season :{
-            type: DataTypes.ENUM('SUMMER', 'SPRING', 'WINTER', 'AUTUMN', 'VERANO', 'PRIMAVERA', 'INVIERNO', 'OTOÑO')
+            type: DataTypes.ENUM('SUMMER', 'SPRING', 'WINTER', 'AUTUMN', 'VERANO', 'PRIMAVERA', 'INVIERNO', 'OTOÑO'),
+            allowNull: false
+
         },
         createdInDB:{
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+
+
         }
     })
 }

@@ -33,6 +33,7 @@ countriesRoute.get('/' , async (req, res) => {
         include: {model : Activity}
     });
 
+
     try {
     if(!countriesInDB.length){
             const apiData = await getApiInfo();
@@ -44,7 +45,7 @@ countriesRoute.get('/' , async (req, res) => {
         if(name){
             let findName = apiData.filter( m => m.name.toLowerCase().includes(name.toLowerCase()) )
             findName.length? res.status(200).json(findName) :
-                res.status(404).send('No existe tal pais');
+                res.status(404).send({message : `${name} no existe`});
         } else {
             res.status(200).json(countriesInDB2)
         }
@@ -52,13 +53,14 @@ countriesRoute.get('/' , async (req, res) => {
         if(name){
             let findName = countriesInDB.filter( m => m.name.toLowerCase().includes(name.toLowerCase()) )
             findName.length? res.status(200).json(findName) :
-                res.status(404).send('No existe tal pais');
+            res.status(404).json({message : `${name} no existe`});
+
         } else {
             res.status(200).json(countriesInDB)
         }
     }
     }catch(e){
-        console.log(e)
+        res.status(400).send('NOT FOUND: '+ e)
     }
 });
 
@@ -84,7 +86,7 @@ countriesRoute.get('/:idPais', async (req, res) => {
         res.status(200).json(getDBInfo)
 
     } catch (error) {
-        console.log(error)
+     res.status(404).json({message : `${idPais} no existe`});
     }
 })
 

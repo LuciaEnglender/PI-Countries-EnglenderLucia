@@ -17,7 +17,10 @@ describe('Country model', () => {
       it('should work when its a valid name', () => {
         Country.create({ name: 'Argentina' });
       });
+
     });
   });
+
+  
 
 });

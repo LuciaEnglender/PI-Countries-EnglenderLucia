@@ -13,7 +13,7 @@ const getApiInfo = async () => {
     const apiInfo = await axios.get('https://restcountries.com/v2/all');
     const info = await apiInfo.data.map(m => {
         return {
-            id : m.cioc || m.name,
+            id : m.cioc || m.alpha3Code,
             name : m.name,
             flag : m.flags.png,
             region : m.region,

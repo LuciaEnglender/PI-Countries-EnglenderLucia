@@ -31,10 +31,6 @@ module.exports = (sequelize) => {
             allowNull: false
 
         },
-        createdInDB:{
-            type: DataTypes.BOOLEAN,
-
-
-        }
+ 
     })
 }

@@ -9,7 +9,7 @@ export default function Card({name, flag, region, id}){
 
     return (
         <div className="principal">
-            <NavLink to={`/details/${id}`} onClick={() => {dispatch(getDetail(id))}}><a className="title">{name}</a></NavLink>
+            <NavLink to={`/details/${id}`} onClick={() => {dispatch(getDetail(id))}}><h3 className="title" key = {id}>{name} </h3></NavLink>
             <img src={flag} alt={`${id}`}/>
             <h5>{region}</h5>
             

@@ -66,12 +66,17 @@ export function getDetail(id){
     return async function (dispatch){
         try{
             const json = await axios.get(`http://localhost:3001/countries/${id}`)
-        
-            return dispatch({
-                type: 'GET_DETAIL',
-                payload: json.data
-            })
+            
+            // return axios.get(`http://localhost:3001/countries/${id}`)
+            // .then(response => {
+                
+                return dispatch({
+                    type: 'GET_DETAIL',
+                    payload: json.data
+                })
 
+            // })
+        
            
         }catch(e){
             console.log(e)
@@ -99,7 +104,7 @@ export function getActivities(payload){
                 payload: json.data
             })
         } catch (error) {
-            
+            console.log(error)
         }
     }
 }

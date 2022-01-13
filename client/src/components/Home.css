@@ -1,6 +1,6 @@
 .containerAll{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     position:relative;
     align-items: baseline;
     justify-content: space-around;

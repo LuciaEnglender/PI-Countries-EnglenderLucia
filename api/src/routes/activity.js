@@ -14,6 +14,7 @@ activitiesRoute.get('/', async (req, res) => {
     return res.status(200).json(getAllActivities)
 })
 
+
 activitiesRoute.post('/',async (req, res) => {
     const {
          description,

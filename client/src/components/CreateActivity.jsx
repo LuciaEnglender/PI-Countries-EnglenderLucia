@@ -34,6 +34,7 @@ export default  function CreateActivity () {
     });
 
     const countries = useSelector((state) => state.countries)
+    const activities = useSelector((state) => state.activities);
 
 
     useEffect(()=> {
@@ -125,6 +126,8 @@ export default  function CreateActivity () {
     }
 
 
+
+
     
     return (
         <div className="container">
@@ -193,6 +196,8 @@ export default  function CreateActivity () {
                 </div>
                 <button type='submit' key='buttoncrear' className="buttoncrear">Crear</button>
             </form>
+           
+           
             <NavLink to='/home'><button className="butonVolver">Volver</button></NavLink>
         </div>
     )

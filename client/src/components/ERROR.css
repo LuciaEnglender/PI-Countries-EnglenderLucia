@@ -1,0 +1,20 @@
+.errorDiv{
+   
+        background-image: linear-gradient(to top, hsla(241, 75%, 76%, 0.493) 0%, hsla(346, 86%, 88%, 0.555) 100%), url("https://img.freepik.com/vector-gratis/mapa-mundo-silueta-gris-aislado-blanco_67515-617.jpg?size=626&ext=jpg");
+        background-size: contain;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+        font-size: 60px;
+}
+
+.errorrr{
+    margin-bottom: 50px;
+}

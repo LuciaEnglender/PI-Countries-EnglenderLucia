@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, buttonsToOrderAlpha, buttonsToOrderNum } from '../actions/index'
+import { getCountries, buttonsToOrderAlpha, buttonsToOrderNum, ERROR } from '../actions/index'
 import SearchBar from './SearchBar';
 import FilterByContinent from './FilterByContinent'
 import FilterByActivity from './FilterByActivity'
@@ -65,6 +65,13 @@ export default function Home(){
         // }
     }
 
+    // cont [error, setError] = useState()
+    const error = useSelector((state) => state.error);
+
+    
+
+
+
 
 
     return (
@@ -75,7 +82,7 @@ export default function Home(){
                 
         {
         
-            
+           
             <div className="main">
             
             <nav className="nav">
@@ -132,7 +139,9 @@ export default function Home(){
                 
                 </div>
         <div className="containerAll">
-                {
+        {
+        // error ? <ERROR/> :
+                
                     allCountries && currentCountries.map(p => {
                         return <Card name={p.name} flag={p.flag} region={p.region} id={p.id}/> 
                     })

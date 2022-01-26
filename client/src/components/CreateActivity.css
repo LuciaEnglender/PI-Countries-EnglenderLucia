@@ -1,5 +1,5 @@
 
-.container{
+.containerCA{
     background-image: linear-gradient(to top, hsla(241, 75%, 76%, 0.493) 0%, hsla(346, 86%, 88%, 0.555) 100%), url("https://img.freepik.com/vector-gratis/mapa-mundo-silueta-gris-aislado-blanco_67515-617.jpg?size=626&ext=jpg");
     background-size: contain;
     min-height: 100vh;
@@ -129,7 +129,11 @@
    
     height: 25px;
     width: 25px;
+    
+}
 
+.checkbox:checked{
+    background-color: black;
 }
 
 .seasonInputs{

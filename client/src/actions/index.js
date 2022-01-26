@@ -115,3 +115,11 @@ export function filterByActivities(payload){
         payload
     }
 }
+
+export function error(payload){
+
+    return{
+        type: 'ERROR',
+        payload
+    }
+}

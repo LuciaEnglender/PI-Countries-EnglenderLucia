@@ -1,7 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { filterByName } from "../actions";
+import { useDispatch, useSelector } from "react-redux";
+import { filterByName , error} from "../actions";
 import './SearchBar.css'
+
 //import { useState } from "react";
 
 export default function SearchBar (){
@@ -10,9 +11,13 @@ export default function SearchBar (){
     const dispatch = useDispatch()
     
     async function handlerChange (e){
+
+
         const json = await dispatch(filterByName(e.target.value))
+
         if(json instanceof Error){
-            alert('Nombre incorrecto!!!')
+            // dispatch(error(true))
+            alert('No existe tal país')
         }
 
     }

@@ -10,7 +10,7 @@ countriesRoute.use(express.json());
 
 
 const getApiInfo = async () => {
-    const apiInfo = await axios.get('https://restcountries.com/v2/all');
+    try {const apiInfo = await axios.get('https://restcountries.com/v2/all');
     const info = await apiInfo.data.map(m => {
         return {
             id : m.cioc || m.alpha3Code,
@@ -24,6 +24,9 @@ const getApiInfo = async () => {
         };
     })
     return info
+    }catch(e){
+        console.log(e)
+    }
 }
 
 

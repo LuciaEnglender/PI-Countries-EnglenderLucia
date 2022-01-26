@@ -7,6 +7,7 @@ import { GET_COUNTRIES ,
         CREATE_ACTIVITY,
         GET_ACTIVITIES,
         FILTER_BY_ACTIVITIES,
+        ERROR
         } from '../actions/index'
 
 const initialState = {
@@ -14,7 +15,7 @@ const initialState = {
     countriesAux : [],
     detail : [],
     activities: [],
- 
+    error : false
 }
 export default function rootReducer(state = initialState, action){
 switch(action.type){
@@ -116,7 +117,7 @@ switch(action.type){
         let allAct = state.activities;
         let filteredAct = allAct.filter(a => a.description === action.payload);
         let countryFiltered = filteredAct.map(c => c.countries)
-        console.log(countryFiltered)
+      
         return{
             ...state,
             countries: countryFiltered[0]
@@ -124,6 +125,15 @@ switch(action.type){
         
 
     }
+
+    case ERROR: {
+
+        return{
+            ...state,
+            error: action.payload
+        }
+    }
+    
     default: 
         return {
             state

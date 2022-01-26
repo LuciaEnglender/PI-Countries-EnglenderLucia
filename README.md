@@ -1,4 +1,4 @@
-# Project Countries APP 🌎
+# Project Countries APP
 
 ### What is it?
 

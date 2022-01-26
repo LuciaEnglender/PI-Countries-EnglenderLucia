@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 # Project Countries APP 
-=======
-# Project Countries APP 🌎
->>>>>>> aa3521cd7e1e23cb7cc0a0c4d54b776f57bcfaf1
+
 
 ### What is it?
 
@@ -19,24 +17,6 @@ The ***front-end*** i've used **ReactJS, Redux andd CSS** without the use of any
     
 It's the first screen you see when you get in the app. You can access to the app's main page through a button.
 
-<<<<<<< HEAD
-
-##### Home Page
-    
- In the home page you can **search by** the country name dynamically. If it isn't a valid name you will get an alert.
- Also **filter** by the differents continents and tourist activities.
- **Order** them by number of pupolation or alphabetically.
-    
-##### Create activity
-
- Through a Redux controlled form, you can create many tourist activities. You need to complete every input or it will be not posted.
- If any of the countries you choose isn't right, you can delete it.
-  
-### Details page   
-
- If you click in any country name in the home page you will see more country **details.**
- Also, if the country you choose has any tourist activity associated, you will see those details.
-=======
 ##### Home Page
     
  In the home page you can **search by** the country name dynamically. If it isn't a valid name you will get an alert.
@@ -53,6 +33,5 @@ It's the first screen you see when you get in the app. You can access to the app
  If you click in any country name in the home page you will see more country **details.**
  Also, if the country you choose has any tourist activity associated, you will see those details.
 
->>>>>>> aa3521cd7e1e23cb7cc0a0c4d54b776f57bcfaf1
 
 

@@ -1,4 +1,4 @@
-# Project Countries APP 🌎
+# Project Countries APP 
 
 ### What is it?
 
@@ -14,7 +14,7 @@ The ***front-end*** i've used **ReactJS, Redux andd CSS** without the use of any
 ##### Landing Page
     
 It's the first screen you see when you get in the app. You can access to the app's main page through a button.
-![LandingPage](.\LandingPage.png)
+
 
 ##### Home Page
     

@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 # Project Countries APP 
 
+=======
+# Project Countries APP
+>>>>>>> a95de2d09934da336c5332e1d1c35f77df55d18c
 
 ### What is it?
 
